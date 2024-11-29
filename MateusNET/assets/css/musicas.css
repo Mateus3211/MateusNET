@@ -1,0 +1,206 @@
+  /* Reset de Estilos */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-size: 16px;
+}
+
+/* Barra Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a; /* Preto com cinza */
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+}
+.sidebar:hover {
+    width: 280px;
+    background-color: #333333; /* Cinza escuro */
+}
+.sidebar h2 {
+    color: #f1c40f; /* Amarelo */
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.sidebar a {
+    display: block;
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 12px 0;
+    font-size: 18px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar a:hover {
+    color: #f1c40f; /* Amarelo */
+    padding-left: 15px;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    overflow-x: hidden;
+    flex: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+header {
+    background-color: #181818; /* Preto */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f1c40f; /* Amarelo */
+    text-transform: uppercase;
+}
+
+/* Seções de Música */
+.section {
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #f1c40f; /* Amarelo */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Carrossel de Músicas */
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    width: 250px;
+    height: 300px;
+    background-color: #333333; /* Cinza escuro */
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Sobreposição com Detalhes */
+.info-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.carousel-item:hover .info-overlay {
+    opacity: 1;
+}
+.info-overlay h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.info-overlay p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #bbb;
+}
+
+/* Efeitos de Foco nas Categorias */
+.carousel-item:focus-within {
+    box-shadow: 0px 4px 20px rgba(241, 196, 15, 0.8); /* Amarelo */
+    transform: scale(1.05);
+}
+
+
+/* General layout and music card enhancements */
+.music-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 20px;
+}
+
+.music-card {
+background-color: #2a2a2a;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease-in-out;
+}
+
+.music-card:hover {
+transform: scale(1.05);
+}
+
+.music-card .music-title {
+font-size: 18px;
+font-weight: bold;
+color: #f1c40f; /* Highlight color for titles */
+}
+
+.music-card .music-artist {
+font-size: 16px;
+color: #ccc;
+}
+
+/* Search bar styling */
+.search-bar {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+background-color: #1f1f1f;
+border: 1px solid #444;
+border-radius: 5px;
+color: #fff;
+}
